@@ -1,24 +1,24 @@
-//------------------Variables------------------------
-
-var APIKey = 'be2657f4805264720d4f2be16afc80a4';//Tested key. Still working
-var queryCurrentURL = 'https://api.openweathermap.org/data/2.5/weather?q=phoenix&appid=' + APIKey;//url to pull data from
-
-// var cityInput = $("#cityInput").val();
-
-var searchBtn = $('#searchBtn');
 
 //-------------------Calling to the OpenWeatherMap API ------------------
 
-
+var searchBtn = $('#searchBtn');
 
 $(searchBtn).on('click', function () {
-    $.ajax({//Get request for current temperature
+    var cityInput = $("#cityInput").val();
+
+    var APIKey = 'be2657f4805264720d4f2be16afc80a4';//Tested key. Still working
+    var queryCurrentURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInput + '&appid=' + APIKey;//url to pull data from
+    var queryUVUrl = '';
+    var queryForecastURL = '';
+
+    // Request and response for current temperature, humidity and wind speed.
+    $.ajax({
         url: queryCurrentURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
-
-        $("#city").html("<h1>" + response.name + "</h1>");
+        var response = response;
+        $("#city").html("<h1>" + response.name + ' (' + moment().format('M/D/YYYY') + ')' + "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png'>" + "</h1>");
         $("#wind").text("Wind Speed: " + response.wind.speed);
         $("#humidity").text("Humidity: " + response.main.humidity);
 
@@ -30,9 +30,9 @@ $(searchBtn).on('click', function () {
         console.log("Temperature (F): " + tempF);
     });
 
-    //request for uv data
-    
-    //request for 5day forecast
+    // Request and response for uv data
+
+    // Request and response for 5day forecast
 
 });
 
