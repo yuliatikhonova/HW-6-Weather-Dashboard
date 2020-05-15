@@ -26,7 +26,7 @@ $(searchBtn).on('click', function () {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
 
-        var queryUVUrl = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + lat + '&lon=' + lon;
+        var queryUVUrl = 'https://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + lat + '&lon=' + lon;
 
         // Request and response for uv index data
         $.ajax({
