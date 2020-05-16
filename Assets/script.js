@@ -26,7 +26,7 @@ $(searchBtn).on('click', function () {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
 
-        var queryUVUrl = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + lat + '&lon=' + lon;
+        var queryUVUrl = 'https://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + lat + '&lon=' + lon;
 
         // Request and response for uv index data
         $.ajax({
@@ -53,12 +53,11 @@ $(searchBtn).on('click', function () {
 
         for (var i = 6; i < response.list.length; i += 8) {
 
-            var day1 = $('#day');
-
-            day1.append('<h4>' + response.list[i].dt_txt + '</h4>');
-            day1.append("<img src='http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png'>");
-            day1.append('<p>Temp: ' + response.list[i].main.temp + " F</p>");
-            day1.append('<p>Humidity: ' + response.list[i].main.humidity + ' %</p>');
+            var day = $('#day');
+            day.append('<h4>' + response.list[i].dt_txt + '</h4>');
+            day.append("<img src='http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png'>");
+            day.append('<p>Temp: ' + response.list[i].main.temp + " F</p>");
+            day.append('<p>Humidity: ' + response.list[i].main.humidity + ' %</p>');
         };
     });
 
@@ -66,6 +65,33 @@ $(searchBtn).on('click', function () {
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
