@@ -1,4 +1,14 @@
-#day {
+#leftSide {
+    float: left;
+    width: 30%;
+}
+
+#rightSide {
+    float: right;
+    width: 70%;
+}
+
+#card {
     background-color: lightblue;
     color: white;
 }
