@@ -1,34 +1,19 @@
-# 06 Server-Side APIs: Weather Dashboard
+For this project we were asked to create a weather app that retrieves data from a third-party API.
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+We were asked to when we search for a city, we would present the current and future conditions for that city. Also the city is added to the search history. For example:
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+![Vid1](https://user-images.githubusercontent.com/62128411/82140256-7dabc180-97e3-11ea-962e-717a68fe7d38.gif)
 
 
-## Acceptance Criteria
+We were also asked to have the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index in the current weather. For example:
 
-```
-GIVEN a weather dashboard with form inputs
+![Screen Shot 2020-05-17 at 2 02 14 AM](https://user-images.githubusercontent.com/62128411/82140262-88feed00-97e3-11ea-8ed7-73457b02f8f2.png)
 
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+For the 5 day forecast we were asked to display the date, icon representation of weather conditions, the temperature, and the humidity. For example:
 
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+![vid3](https://user-images.githubusercontent.com/62128411/82140273-961bdc00-97e3-11ea-8702-8a9fdeeecf2e.gif)
 
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+Also when the city search history is clicked, we present the current and future conditions for that city :
 
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+![video4](https://user-images.githubusercontent.com/62128411/82140282-a03dda80-97e3-11ea-811c-9672a3a51574.gif)
 
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast
-```
-
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
