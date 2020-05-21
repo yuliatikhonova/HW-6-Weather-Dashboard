@@ -12,7 +12,7 @@ function displayWeatherInfo(city) {
         method: "GET"
     }).then(function (response) {
         var dataDiv = $("#data");
-        dataDiv.html("<h1>" + response.name + ' (' + moment().format('M/D/YYYY') + ')' + "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png'>" + "</h1>");
+        dataDiv.html("<h1>" + response.name + ' (' + moment().format('M/D/YYYY') + ')' + "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'>" + "</h1>");
         dataDiv.append("<p>Wind Speed: " + response.wind.speed + "</p>");
         dataDiv.append("<p>Humidity: " + response.main.humidity + "</p>");
         dataDiv.append("<p>Temperature: " + response.main.temp + ' F</p>');
@@ -37,10 +37,10 @@ function displayWeatherInfo(city) {
             for (var i = 6; i < response.list.length; i += 8) {
 
                 var day = $("#day");
-                day.append('<h4>' + response.list[i].dt_txt + '</h4>');
-                day.append("<img src='http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png'>");
-                day.append('<p>Temp: ' + response.list[i].main.temp + " F</p>");
-                day.append('<p>Humidity: ' + response.list[i].main.humidity + ' %</p>');
+                day.prepend('<h4>' + response.list[i].dt_txt + '</h4>');
+                day.prepend("<img src='http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + ".png'>");
+                day.prepend('<p>Temp: ' + response.list[i].main.temp + " F</p>");
+                day.prepend('<p>Humidity: ' + response.list[i].main.humidity + ' %</p>');
 
 
             };
